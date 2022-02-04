@@ -1,0 +1,45 @@
+# Project: jakach_scripting_language
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = jakach_scripting_language_private.res
+OBJ      = main_achscript.o advanced_input_scan.o script_reader.o var_functions.o help.o $(RES)
+LINKOBJ  = main_achscript.o advanced_input_scan.o script_reader.o var_functions.o help.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -m64 -pg
+INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = jakach_scripting_language.exe
+CXXFLAGS = $(CXXINCS) -m64 -std=c++11 -pg
+CFLAGS   = $(INCS) -m64 -std=c++11 -pg
+DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main_achscript.o: main_achscript.cpp
+	$(CPP) -c main_achscript.cpp -o main_achscript.o $(CXXFLAGS)
+
+advanced_input_scan.o: advanced_input_scan.cpp
+	$(CPP) -c advanced_input_scan.cpp -o advanced_input_scan.o $(CXXFLAGS)
+
+script_reader.o: script_reader.cpp
+	$(CPP) -c script_reader.cpp -o script_reader.o $(CXXFLAGS)
+
+var_functions.o: var_functions.cpp
+	$(CPP) -c var_functions.cpp -o var_functions.o $(CXXFLAGS)
+
+help.o: help.cpp
+	$(CPP) -c help.cpp -o help.o $(CXXFLAGS)
+
+jakach_scripting_language_private.res: jakach_scripting_language_private.rc 
+	$(WINDRES) -i jakach_scripting_language_private.rc --input-format=rc -o jakach_scripting_language_private.res -O coff 
+
