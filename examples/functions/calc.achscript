@@ -1,0 +1,36 @@
+script:jakach_achscript.function
+println please type in your calculations in the syntax <num1 operator(+-*/) num2> 
+scan.int zahl1
+scan.char op
+scan.int zahl2
+if.char.== op plus
+math.var zahl1 + zahl2
+print.int zahl1
+println
+end_of_if
+
+if.char.== op minus
+math.var zahl1 - zahl2
+print.int zahl1
+println
+end_of_if
+
+if.char.== op mal 
+math.var zahl1 * zahl2
+print.int zahl1
+println
+end_of_if
+
+if.char.== op geteilt
+if.int.!= zahl2 zero
+math.var zahl1 / zahl2
+print.int zahl1
+println
+end_of_if
+end_of_if
+if.int.== zahl2 zero
+if.char.== op geteilt
+println error division by 0;
+end_of_if
+end_of_if
+
