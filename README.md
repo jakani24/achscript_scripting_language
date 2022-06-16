@@ -1,5 +1,5 @@
 # achscript_scripting_language
-IMPORTANT: I'm working on version 2. It will be better to say at least. The planned release date is -/+ the 19 of June.
+IMPORTANT: Do not use this version, because it is old and does not work properly. Please use https://github.com/jakani24/achscript_2
 
 this is a script interpretor. It is slow and mostly junk...
 
